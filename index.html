@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.css">
+    <title>DOM Temperature Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center text-md-start">
+                <h1>Temp Converter <span>Pro</span></h1>
+            </div>
+        </div>
+    </div>
+    <div class="container conversion-container">
+        <div class="row">
+            <div class=" col-6">
+                <label for="conversionType">Conversion Type: </label>
+                <select name="conversionType" id="conversionType">
+                    <option value="CtoF" id="CtoF" class="menuItem1">Celsius to Fahrenheit</option>
+                    <option value="FtoC" id="FtoC" class="menuItem2">Fahrenheit to Celsius</option>
+                    <option value="CtoK" id="CtoK" class="menuItem3">Celsius to Kelvin</option>
+                    <option value="KtoC" id="KtoC" class="menuItem4">Kelvin to Celsius</option>
+                </select>
+                <label for="tempInput">Temperature Value: </label>
+                <input type="number" name="tempInput" id="tempInput" placeholder="Enter Temperature">
+                <input type="button" value="Convert" id="convertButton" class="btn btn-success">
+            </div>
+        </div>
+    </div>
+    <div class="container resultDisplay">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./JS/app.js"></script>
+</html>
