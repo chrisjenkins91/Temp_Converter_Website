@@ -9,16 +9,16 @@
     <title>DOM Temperature Converter</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container temp-container">
         <div class="row">
-            <div class="col-12 text-center text-md-start">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12 text-center text-md-start">
                 <h1>Temp Converter <span>Pro</span></h1>
             </div>
         </div>
     </div>
-    <div class="container conversion-container">
-        <div class="row">
-            <div class=" col-6">
+    <div class="container conversion-container bg-info border border-3 border-warning rounded p-3">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 mt-1">
                 <label for="conversionType">Conversion Type: </label>
                 <select name="conversionType" id="conversionType">
                     <option value="CtoF" id="CtoF" class="menuItem1">Celsius to Fahrenheit</option>
@@ -26,6 +26,8 @@
                     <option value="CtoK" id="CtoK" class="menuItem3">Celsius to Kelvin</option>
                     <option value="KtoC" id="KtoC" class="menuItem4">Kelvin to Celsius</option>
                 </select>
+            </div>
+            <div class="col-6">
                 <label for="tempInput">Temperature Value: </label>
                 <input type="number" name="tempInput" id="tempInput" placeholder="Enter Temperature">
                 <input type="button" value="Convert" id="convertButton" class="btn btn-success">
@@ -34,8 +36,8 @@
     </div>
     <div class="container resultDisplay">
         <div class="row">
-            <div class="col-12 col-md-6">
-                <p id="result"></p>
+            <div class="col-12 p-5">
+                <p id="result" class="display-4 text-center"></p>
             </div>
         </div>
     </div>

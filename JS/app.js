@@ -32,39 +32,44 @@
 //* Conversion Functions:
 //* Write functions that handle the conversion logic between Celsius, Fahrenheit, and Kelvin.
 
-//Getting the conversion type the user entered
-let conversionType = document.getElementById("conversionType").value;
-console.log(conversionType)
-
-//Grabbing the temperature value entered by the user
-let tempInput = document.getElementById("tempInput").value;
-console.log(tempInput)
-
 function tempConverter(){
+    debugger
+
+    //Grabbing the temperature value entered by the user
+    let tempInput = document.getElementById("tempInput").value;
+
+    //Getting the conversion type the user entered
+    let conversionType = document.getElementById("conversionType").value;
 
     let convertedTemp = ""; //Created a variable to store the result
-
     // Used if statement to check the type of conversion to use & do the math
     if (conversionType === "CtoF") {
         convertedTemp = (tempInput * 9/5) + 32
     } else if(conversionType === "FtoC") {
         convertedTemp = (tempInput - 32) * 5/9
     } else if(conversionType === "CtoK") {
-        convertedTemp = tempInput + 273.15
+        convertedTemp = parseFloat(tempInput) + 273.15
     } else if(conversionType === "KtoC") {
         convertedTemp = tempInput - 273.15
     } else {
         confirm("This is an invalid input..")
     }
-    document.getElementById("result").innerText = convertedTemp;
+    // Display results after function is performed
+    document.getElementById("result").innerText = "Your Converted Temperature: " + Math.floor(convertedTemp);
+    
 }
 
+// Created a variable for convertButton when clicked to perform a function
+let convertButton = document.getElementById("convertButton");
+console.log(convertButton);
 
-
-
+// Added an EventListener to perform tempConverter() function when convertButton is "clicked"
+convertButton.addEventListener("click", tempConverter)
 
 //* Event Handling:
 //* Implement event listeners that trigger the conversion when the user interacts with the page (e.g., clicking the "Convert" button).
+
+
 
 //* Result Display:
 //* Update the result area of the page with the converted temperature.
