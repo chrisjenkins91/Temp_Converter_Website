@@ -11,15 +11,20 @@
 <body>
     <div class="container temp-container">
         <div class="row">
-            <div class="col-12 col-md-12 col-lg-12 col-xl-12 text-center text-md-start">
-                <h1>Temp Converter <span>Pro</span></h1>
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12 text-center text-md-start my-5">
+                <h1 data-text="Temp Converter Pro">Temp Converter <span>Pro</span></h1>
             </div>
         </div>
     </div>
-    <div class="container conversion-container bg-info border border-3 border-warning rounded p-3">
-        <div class="row d-flex justify-content-center">
-            <div class="col-6 mt-1">
-                <label for="conversionType">Conversion Type: </label>
+    <div class="container conversion-container bg-info p-4">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-12">
+                    <p>Welcome to <em><b>TEMP CONVERTER PRO</b></em>!! Just simply click on the menu to pick a temperature conversion option. Once you have your desired conversion type, enter the temperature value, then Wallah. The converter will display the correct conversion.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5 mt-1">
+                <label for="conversionType"><b>Conversion Type: </b></label>
                 <select name="conversionType" id="conversionType">
                     <option value="CtoF" id="CtoF" class="menuItem1">Celsius to Fahrenheit</option>
                     <option value="FtoC" id="FtoC" class="menuItem2">Fahrenheit to Celsius</option>
@@ -27,17 +32,21 @@
                     <option value="KtoC" id="KtoC" class="menuItem4">Kelvin to Celsius</option>
                 </select>
             </div>
-            <div class="col-6">
-                <label for="tempInput">Temperature Value: </label>
+            <div class="col-12 col-md-6">
+                <label for="tempInput"><b>Temp Value: </b></label>
                 <input type="number" name="tempInput" id="tempInput" placeholder="Enter Temperature">
-                <input type="button" value="Convert" id="convertButton" class="btn btn-success">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 text-center text-md-end">
+                <input type="button" value="Convert" id="convertButton" class="btn btn-light mt-2">
             </div>
         </div>
     </div>
     <div class="container resultDisplay">
         <div class="row">
             <div class="col-12 p-5">
-                <p id="result" class="display-4 text-center"></p>
+                <p id="result" class="display-5 text-center"></p>
             </div>
         </div>
     </div>

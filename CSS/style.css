@@ -1,15 +1,42 @@
 body{
-    background: rgb(34,193,195);
-    background: -moz-radial-gradient(circle, rgba(34,193,195,1) 13%, rgba(253,187,45,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(34,193,195,1) 13%, rgba(253,187,45,1) 100%);
-    background: radial-gradient(circle, rgba(34,193,195,1) 13%, rgba(253,187,45,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#fdbb2d",GradientType=1);
+    background-color: #252839;
 }
 
+
 .temp-container h1{
-    color: #FFFFFF;
-    
+    color: #252839;
+    font-size: 5vw;
+    letter-spacing: 0.3rem;
+    -webkit-text-stroke: 0.3vw #383d52;
+    text-transform: uppercase;
     text-shadow: 3px 5px 2px #474747;
+    
+}
+
+.temp-container h1::before{ 
+    text-wrap: nowrap;
+    content: attr(data-text);
+    color: #01fe87;
+    position: absolute;
+    width: 0;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear forwards;
+}
+@keyframes animate 
+{
+    0%, 10%, 100%
+    {
+        width: 0;
+    }
+    70%, 90%
+    {
+        width: 100%;
+    }
 }
 
 h1 span{
@@ -21,9 +48,12 @@ h1 span{
 }
 
 .conversion-container{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 3px solid #01fe87;
+    border-radius: 25px;
+    box-shadow: rgba(185, 185, 185, 0.131) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.resulstDisplay{
-    background-color: rgb(34,193,195);
+.resultDisplay p{
+    color: #01fe87;
 }
+
