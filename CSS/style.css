@@ -50,7 +50,7 @@ h1 span{
 .conversion-container{
     border: 3px solid #01fe87;
     border-radius: 25px;
-    box-shadow: rgba(185, 185, 185, 0.131) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 10px 15px 12px;
 }
 
 .resultDisplay p{

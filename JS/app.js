@@ -34,6 +34,9 @@
 
 function tempConverter(){
     debugger
+    let farenheit = "F";
+    let celsius = "C";
+    let kelvin = "K";
 
     //Grabbing the temperature value entered by the user
     let tempInput = document.getElementById("tempInput").value;
@@ -44,7 +47,7 @@ function tempConverter(){
     let convertedTemp = ""; //Created a variable to store the result
     // Used if statement to check the type of conversion to use & do the math
     if (conversionType === "CtoF") {
-        convertedTemp = (tempInput * 9/5) + 32
+        convertedTemp = (tempInput * 9/5) + 32 
     } else if(conversionType === "FtoC") {
         convertedTemp = (tempInput - 32) * 5/9
     } else if(conversionType === "CtoK") {
@@ -55,7 +58,7 @@ function tempConverter(){
         confirm("This is an invalid input..")
     }
     // Display results after function is performed
-    document.getElementById("result").innerText = "Your Converted Temperature: " + Math.floor(convertedTemp);
+    document.getElementById("result").innerText = "Your Converted Temperature: " + Math.floor(convertedTemp) + " degrees ";
     
 }
 
