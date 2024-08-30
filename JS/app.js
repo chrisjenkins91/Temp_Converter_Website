@@ -34,37 +34,55 @@
 
 function tempConverter(){
     debugger
-    let farenheit = "F";
-    let celsius = "C";
-    let kelvin = "K";
-
+    // Created variables for the temp names.
+    let farenheit = "Farenheit"
+    let celsius = "Celsius"
+    let kelvin = "Kelvin"
     //Grabbing the temperature value entered by the user
     let tempInput = document.getElementById("tempInput").value;
 
-    //Getting the conversion type the user entered
+    //Getting the conversion type the user selected
     let conversionType = document.getElementById("conversionType").value;
 
     let convertedTemp = ""; //Created a variable to store the result
     // Used if statement to check the type of conversion to use & do the math
     if (conversionType === "CtoF") {
-        convertedTemp = (tempInput * 9/5) + 32 
+        convertedTemp = (tempInput * 9/5) + 32
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + farenheit
     } else if(conversionType === "FtoC") {
         convertedTemp = (tempInput - 32) * 5/9
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + celsius
     } else if(conversionType === "CtoK") {
-        convertedTemp = parseFloat(tempInput) + 273.15
+        convertedTemp = parseFloat(tempInput).toFixed(2) + 273.15
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + kelvin
     } else if(conversionType === "KtoC") {
         convertedTemp = tempInput - 273.15
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + celsius
+    } else if(conversionType === "FtoK") {
+        convertedTemp = (tempInput - 32) * 5/9 + 273.15
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + kelvin
+    } else if(conversionType === "KtoF"){
+        convertedTemp = (tempInput - 273.15) * 9/5 + 32
+        document.getElementById("result").innerText = "Your Converted Temperature: " + parseFloat(convertedTemp).toFixed(2) + " degrees " + farenheit
     } else {
-        confirm("This is an invalid input..")
+        confirm("This is an invalid input..");
+    };
+
+
+    // Used an if statement to display an error if the user didn't enter a value
+
+    if (tempInput === "") {
+        confirm(`Please enter a number.`);//* Error checker prompt to enter a #
+        document.getElementById("result").innerText = "";
     }
     // Display results after function is performed
-    document.getElementById("result").innerText = "Your Converted Temperature: " + Math.floor(convertedTemp) + " degrees ";
+    
     
 }
 
-// Created a variable for convertButton when clicked to perform a function
+// Created a variable for convertButton when clicked to perform a temp function
 let convertButton = document.getElementById("convertButton");
-console.log(convertButton);
+
 
 // Added an EventListener to perform tempConverter() function when convertButton is "clicked"
 convertButton.addEventListener("click", tempConverter)
